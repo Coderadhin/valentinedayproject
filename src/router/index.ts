@@ -3,8 +3,8 @@ import Home from '../views/Home.vue'
 import Gift from '../views/Gift.vue'
 
 const routes = [
-  { path: '/', name: 'Home', component: Home },
-  { path: '/gift', name: 'Gift', component: Gift }
+  // { path: '/', name: 'Home', component: Home },
+  { path: '/', name: 'Gift', component: Gift }
 ]
 
 const router = createRouter({
