@@ -7,7 +7,8 @@
   <span>💗</span>
 </div>
 
-    <div class="gift-card" @mouseover="openCard" @mouseleave="closeCard">
+    <div class="gift-card" @mouseover="openCard" @mouseleave="closeCard"      @click="isOpen = !isOpen">
+>
       <div class="page left" :class="{ open: isOpen }">
       <div class="face front">
   <div class="front-inner">
@@ -269,7 +270,7 @@ padding:1rem}
 
   transform: rotateY(180deg); /* sits behind until rotated */
 }
-.gift-card:hover .page.left {
+.page.left.open {
   transform: rotateY(-180deg);
 }
 
@@ -330,5 +331,58 @@ padding:1rem}
     transform: translateY(110vh);
   }
 }
+/* ============================= */
+/* 📱 MOBILE RESPONSIVE SUPPORT */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .gift-card {
+    width: 95vw;
+    height: 85vh;
+    max-width: none;
+    max-height: none;
+  }
+
+  .page.left,
+  .inside {
+    width: 100%;
+  }
+
+  /* Disable 3D half-card effect on mobile */
+  .gift-card:hover .page.left {
+    transform: none;
+  }
+
+  .page.left {
+    position: relative;
+  }
+
+  .inside {
+    position: relative;
+    z-index: 1;
+    height: auto;
+    padding: 20px;
+  }
+
+  .valentine-title {
+    font-size: 1.8rem;
+  }
+
+  .back p {
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  .couple-img {
+    width: 120px;
+  }
+
+  .inside-text {
+    font-size: 14px;
+  }
+
+}
+
 
 </style>
